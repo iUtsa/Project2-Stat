@@ -1,6 +1,5 @@
-package final_project_part_3;
-
 import java.awt.Dimension;
+
 import javax.swing.JFrame;
 
 import org.jfree.chart.ChartFactory;

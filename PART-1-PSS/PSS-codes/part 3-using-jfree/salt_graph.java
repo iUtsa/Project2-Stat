@@ -1,11 +1,8 @@
-package final_project_part_3;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-import Project_part1.mainSystem;
 import javax.swing.*;
 
 import org.jfree.data.xy.XYSeries;

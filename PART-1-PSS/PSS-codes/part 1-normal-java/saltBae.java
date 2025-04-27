@@ -1,6 +1,3 @@
-package Project_part1;
-
-
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.io.IOException;

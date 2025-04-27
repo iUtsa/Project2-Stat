@@ -1,6 +1,3 @@
-package Project_part1;
-
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
