@@ -1,6 +1,6 @@
 <div align="center">
   <img src="https://via.placeholder.com/1200x400?text=🚀+Project+NimbusPSS+🚀" alt="Project NimbusPSS Banner" style="width:100%; border-radius:15px;">
-  <h1>🚀 Project NimbusPSS</h1>
+  <h1>🚀 Project 2</h1>
   <p><b>Precision Salting, Smoothing, Research Analysis, and Fingerprinting</b></p>
   <p>Built with ❤️ using Java, AI, Flask, and Octave</p>
 
@@ -17,8 +17,16 @@
 
 ## 📋 Table of Contents
 - [🚀 Overview](#-overview)
-- [🎯 Features](#-features)
-- [💂️ Directory Structure](#️-directory-structure)
+- [📂 Directory Structure](#-directory-structure)
+- [🧩 Part 1: PSS System](#-part-1-pss-system)
+  - [✨ 1.1 Java Plotter, Salter, and Smoother](#-11-java-plotter-salter-and-smoother)
+  - [🧮 1.2 Octave-Based Smoother](#-12-octave-based-smoother)
+  - [📈 1.3 JFreeChart & JCommon Visualization](#-13-jfreechart--jcommon-visualization)
+  - [🧠 1.4 Special Version: Nimbus AI for PSS](#-14-special-version-nimbus-ai-for-pss)
+- [📚 Part 2: Dataset Research Paper](#-part-2-dataset-research-paper)
+- [🔍 Part 3: HashMapping Systems](#-part-3-hashmapping-systems)
+  - [🧩 3.1 SimpleHashMap](#-31-simplehashmap)
+  - [🔒 3.2 Fingerprinting via Hash Mapping](#-32-fingerprinting-via-hash-mapping)
 - [⚙️ Setup Instructions](#-setup-instructions)
 - [🛠️ Technologies Used](#-technologies-used)
 - [🚀 Future Enhancements](#-future-enhancements)
@@ -28,87 +36,119 @@
 
 ## 🚀 Overview
 
-**NimbusPSS** is a complete system combining:
-- Precision Data Salting and Smoothing.
-- Formal Dataset Research and Analysis.
-- AI-Powered Salting/Smoothing Optimizations.
-- Custom Fingerprinting using Hash Mapping.
-- A mix of Java Engineering, Octave Math, AI Tools, and Flask Web Applications.
+This project explores the fusion of Java development, AI-powered data analysis, statistical research, and cryptographic hash mapping:
+- **PSS (Plotting, Salting, Smoothing)** using classic Java, Octave, and JFreeChart.
+- **Research Dataset Analysis** documented in a formal academic paper.
+- **Hash Mapping & Fingerprinting** system built in Java and Flask.
 
 ---
 
-## 🎯 Features
-
-🌟 Java **Plotter**, **Salter**, **Smoother** (Classic + JFreeChart)  
-🌟 Octave-based mathematical validation of smoothing  
-🌟 **Nimbus AI** trained specifically for PSS optimization  
-🌟 Full **Research Paper** on CSV datasets (APA Format)  
-🌟 **SimpleHashMap** custom collision management  
-🌟 Fingerprinting Web Application with colorful visual output!  
-
----
-
-## 💂️ Directory Structure
+## 📂 Directory Structure
 
 ```
-/StatsLibrary/       → Java classes + Documentation (Plotter, Salter, Smoother)
+/StatsLibrary/       → Java classes: Plotter, Salter, Smoother + Documentation
 /FormulaSheet/       → Statistical formula references
-/DatasetResearch/    → Full research paper and CSV dataset
-/FingerprintingApp/  → Flask web app for fingerprinting visualization
-/SimpleHashMap/      → Custom HashMap implementation (Java)
-/NimbusPSS/          → Special AI models for salting/smoothing automation
+/DatasetResearch/    → Research paper and CSV dataset
+/FingerprintingApp/  → Flask web app for fingerprint visualization
+/SimpleHashMap/      → Custom Java HashMap implementation
+/NimbusPSS/          → Special version of Nimbus AI optimized for PSS
 ```
+
+---
+
+## 🧩 Part 1: PSS System
+
+### ✨ 1.1 Java Plotter, Salter, and Smoother
+- Core classes: `Plotter`, `Salter`, `Smoother`
+- Salting introduces controlled randomness.
+- Smoothing applies moving averages for trend visualization.
+- Visualized using Java's built-in libraries.
+
+### 🧮 1.2 Octave-Based Smoother
+- Alternative version using **GNU Octave**.
+- Matrix-based smoothing.
+- Mathematical validation of Java outputs.
+
+### 📈 1.3 JFreeChart & JCommon Visualization
+- Dynamic, polished chart generation.
+- Professional `.png` graph exports.
+
+### 🧠 1.4 Special Version: Nimbus AI for PSS
+- Fine-tuned AI tool.
+- Optimizes salting/smoothing parameters.
+- Explains dataset behavior intelligently.
+
+---
+
+## 📚 Part 2: Dataset Research Paper
+
+- 📄 Formal research paper analyzing real-world trends.
+- 📊 CSV dataset included for analysis.
+- ✍️ Academic APA citations.
+- 🔍 Detailed visualization and statistical explanation.
+
+---
+
+## 🔍 Part 3: HashMapping Systems
+
+### 🧩 3.1 SimpleHashMap
+- Custom-built HashMap in Java.
+- Collision handling, rehashing, and bucket exploration.
+
+### 🔒 3.2 Fingerprinting via Hash Mapping
+- Text transformed into colorful digital "fingerprints".
+- Backend: Java
+- Frontend: Flask + Python (Pillow library)
+- Visualizes predictable hash collisions intentionally.
 
 ---
 
 ## ⚙️ Setup Instructions
 
 ### 📦 Clone the Repository
-
 ```bash
 git clone https://github.com/YourUsername/NimbusPSS.git
 cd NimbusPSS
 ```
 
-### ☕️ Compile Java Code
-
+### ☕ Compile Java Code
 ```bash
 javac -cp "lib/*" StatsLibrary/*.java
 ```
 
 ### 🐍 Install Python Dependencies
-
 ```bash
 cd FingerprintingApp
 pip install Flask Pillow
 ```
 
 ### ▶️ Run the Projects
-- Run Java classes (`Plotter`, `Salter`, `Smoother`, `SimpleHashMap`)
-- Start the Flask server for the Fingerprinting App
-- Open the `DatasetResearch/` paper and CSV file for research
+- Run Java classes (PSS, SimpleHashMap).
+- Start Flask server for Fingerprinting App.
+- Open `DatasetResearch/` folder for CSV and paper.
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Tech         | Purpose                         |
-| ------------ | ------------------------------- |
-| ![Java](https://img.shields.io/badge/Java-21-FF7800?logo=openjdk&logoColor=white) | Java backend development |
-| ![Python](https://img.shields.io/badge/Python-Flask-3776AB?logo=python&logoColor=white) | Flask frontend for Web App |
-| ![Octave](https://img.shields.io/badge/Octave-Matrix-00599C?logo=gnu&logoColor=white) | Matrix Computations |
-| ![Nimbus AI](https://img.shields.io/badge/Nimbus%20AI-Specialized-purple?logo=openai&logoColor=white) | PSS Optimizations |
-| ![CSV Data](https://img.shields.io/badge/CSV-Dataset-lightgrey?logo=csv&logoColor=black) | Research Analysis |
+| Technology        | Purpose                          |
+| ----------------- | -------------------------------- |
+| Java 21           | Backend development             |
+| Octave            | Matrix-based smoothing           |
+| JFreeChart & JCommon | Advanced graphing             |
+| Python (Flask, PIL) | Fingerprinting web app         |
+| Nimbus AI         | AI-powered smoothing optimizer   |
+| CSV Data          | Research dataset for analysis    |
 
 ---
 
 ## 🚀 Future Enhancements
 
-- [ ] 🌐 Deploy the Fingerprinting WebApp publicly
-- [ ] 🤖 Real-time AI smoothing/salting recommendations
-- [ ] 📈 Compare AI vs traditional smoothing methods
-- [ ] 🎨 Turn fingerprints into NFT digital artworks
-- [ ] 🧠 Expand NimbusAI with broader statistical capabilities
+- 🌐 Deploy Fingerprinting App publicly.
+- 🤖 Add real-time AI smoothing suggestions.
+- 📈 Compare classic vs AI-optimized smoothing outputs.
+- 🎨 Turn fingerprints into NFT-style digital artworks.
+- 🧠 Expand NimbusAI with broader statistical modeling.
 
 ---
 
