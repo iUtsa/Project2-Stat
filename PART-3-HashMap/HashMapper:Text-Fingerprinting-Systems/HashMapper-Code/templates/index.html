@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title|default('HashMapper - Text to Image Fingerprints') }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>HashMapper</h1>
+        <p>Visual Cryptanalysis Through Intentional Collisions</p>
+    </header>
+
+    <main>
+        <div class="tabs">
+            <button class="tab-button active" data-tab="fingerprint">Generate Fingerprint</button>
+            <button class="tab-button" data-tab="experiments">Run Experiments</button>
+            <button class="tab-button" data-tab="about">About</button>
+        </div>
+
+        <div class="tab-content">
+            <!-- Fingerprint Tab -->
+            <div id="fingerprint" class="tab-pane active">
+                <div class="input-panel">
+                    <h2>Text Input</h2>
+                    <textarea id="text-input" placeholder="Enter text to generate a fingerprint..."></textarea>
+                    
+                    <div class="parameters">
+                        <div class="parameter">
+                            <label for="hash-function">Hash Function:</label>
+                            <select id="hash-function">
+                                {% for hash_func in hash_functions|default(['String Length', 'First Character', 'First + Last Character', 'Character Sum', 'Random']) %}
+                                <option {% if loop.first %}selected{% endif %}>{{ hash_func }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="parameter">
+                            <label for="map-size">HashMap Size:</label>
+                            <input type="range" id="map-size" min="16" max="512" step="16" value="{{ default_map_size|default('128') }}">
+                            <span class="value-display">{{ default_map_size|default('128') }}</span>
+                        </div>
+                        
+                        <div class="parameter">
+                            <label for="salt-level">Salt Level:</label>
+                            <input type="range" id="salt-level" min="0" max="100" value="{{ default_salt_level|default('5') }}">
+                            <span class="value-display">{{ default_salt_level|default('5') }}%</span>
+                        </div>
+                        
+                        <div class="parameter">
+                            <label for="smooth-radius">Smooth Radius:</label>
+                            <input type="range" id="smooth-radius" min="0" max="10" value="{{ default_smooth_radius|default('2') }}">
+                            <span class="value-display">{{ default_smooth_radius|default('2') }}</span>
+                        </div>
+                    </div>
+                    
+                    <button id="generate-button" class="primary-button">Generate Fingerprint</button>
+                </div>
+                
+                <div id="results" class="results-panel hidden">
+                    <div class="fingerprints">
+                        <div class="fingerprint-card">
+                            <h3>Raw Fingerprint</h3>
+                            <img id="raw-fingerprint" alt="Raw fingerprint">
+                        </div>
+                        
+                        <div class="fingerprint-card">
+                            <h3>Enhanced Fingerprint</h3>
+                            <img id="enhanced-fingerprint" alt="Enhanced fingerprint">
+                        </div>
+                    </div>
+                    
+                    <div class="stats-panel">
+                        <h3>Text Statistics</h3>
+                        <div id="stats-display" class="stats-grid"></div>
+                    </div>
+                </div>
+                
+                <div id="loading" class="loading-panel hidden">
+                    <div class="spinner"></div>
+                    <p>Generating fingerprint...</p>
+                </div>
+            </div>
+            
+            <!-- Experiments Tab -->
+            <div id="experiments" class="tab-pane">
+                <h2>HashMap Experiments</h2>
+                <p>Run experiments to analyze HashMap behavior with different configurations.</p>
+                
+                <div class="experiment-options">
+                    {% for experiment in experiments|default([
+                        {'type': 'collision', 'title': 'Collision Analysis'},
+                        {'type': 'lookup', 'title': 'Lookup Performance'},
+                        {'type': 'distribution', 'title': 'Bucket Distribution'},
+                        {'type': 'hashFunction', 'title': 'Hash Function Comparison'},
+                        {'type': 'comparison', 'title': 'HashMap Comparison'},
+                        {'type': 'textFingerprint', 'title': 'Text Fingerprint Analysis'}
+                    ]) %}
+                    <button class="experiment-button" data-type="{{ experiment.type }}">{{ experiment.title }}</button>
+                    {% endfor %}
+                </div>
+                
+                <div id="experiment-results" class="experiment-results hidden">
+                    <h3 id="experiment-title"></h3>
+                    <div id="experiment-visualization">
+                        <img id="experiment-image" alt="Experiment visualization">
+                    </div>
+                </div>
+                
+                <div id="experiment-loading" class="loading-panel hidden">
+                    <div class="spinner"></div>
+                    <p>Running experiment...</p>
+                </div>
+            </div>
+            
+            <!-- About Tab -->
+            <div id="about" class="tab-pane">
+                <h2>About HashMapper</h2>
+                <p>HashMapper is an innovative tool that transforms text into visual fingerprints using the collision patterns of deliberately weak hash functions.</p>
+                
+                <h3>How It Works</h3>
+                <p>Text is processed through a HashMap with intentionally simple hash functions. The resulting collision patterns create unique visual representations that can reveal hidden structures in the text.</p>
+                
+                <h3>Hash Functions</h3>
+                <ul>
+                    {% for hash_func in hash_function_descriptions|default([
+                        {'name': 'String Length', 'description': 'Uses only the length of words'},
+                        {'name': 'First Character', 'description': 'Uses only the first character of words'},
+                        {'name': 'First + Last Character', 'description': 'Combines first and last characters'},
+                        {'name': 'Character Sum', 'description': 'Sums all character values'},
+                        {'name': 'Random', 'description': 'Creates pseudo-random but deterministic patterns'}
+                    ]) %}
+                    <li><strong>{{ hash_func.name }}:</strong> {{ hash_func.description }}</li>
+                    {% endfor %}
+                </ul>
+                
+                <h3>Applications</h3>
+                <p>HashMapper can be used for authorship attribution, plagiarism detection, text categorization, and visual data analysis.</p>
+                
+                {% if additional_info %}
+                <h3>Additional Information</h3>
+                <div class="additional-info">
+                    {{ additional_info|safe }}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>HashMapper: Visual Text Fingerprinting System</p>
+        {% if version %}
+        <p class="version">Version {{ version }}</p>
+        {% endif %}
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
