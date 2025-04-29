@@ -1,11 +1,25 @@
 import java.io.BufferedWriter;
 import java.io.IOException;
-//import java.util.ArrayList;
 import java.util.InputMismatchException;
-//import java.util.NoSuchElementException;
 import java.util.Scanner;
 //import java.lang.Math;
 
+
+/**
+ * plotter - A program to calculate and store cosine function values for a given range.
+ * 
+ * This class uses the `mainSystem` utility class to perform file operations, format values, 
+ * and calculate areas under the cosine curve. It prompts the user for input, calculates 
+ * cosine values for a specified range, and stores the results in a CSV file.
+ * 
+ * Features:
+ * - User input handling for file name, range bounds, and increment rate
+ * - Support for both radians and degrees
+ * - Calculation of cosine values for a range of inputs
+ * - Storage of results in a CSV file
+ * 
+ * Author: Arnab Das Utsa
+ */
 public class plotter {
 
 	public static void main(String[] args) {

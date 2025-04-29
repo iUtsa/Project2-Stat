@@ -1,10 +1,25 @@
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
 
-public class saltBae {
+/**
+ * salter - A program to apply a "salting" operation to data from a CSV file.
+ * 
+ * This class uses the `mainSystem` utility class to perform file operations, 
+ * format values, and apply random salting to the y-values of data points in a CSV file. 
+ * The salted data is then stored in a new CSV file.
+ * 
+ * Features:
+ * - Reads data from an input CSV file
+ * - Applies a random salting operation to y-values within a specified range
+ * - Writes the salted data to a new CSV file
+ * - Handles file input/output errors gracefully
+ * 
+ * Author: Arnab Das Utsa
+ */
+public class salter {
 
 	public static void main(String[] args) {
 

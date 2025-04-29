@@ -9,20 +9,48 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * mainSystem - A utility class for file operations, data processing, and mathematical computations.
+ * 
+ * This class provides methods for creating and managing files, generating salting values, 
+ * smoothing data, and performing mathematical operations such as calculating areas under curves.
+ * It is designed to work with CSV files and supports user interaction through the console.
+ * 
+ * Features:
+ * - File creation, reading, and writing
+ * - Salting and smoothing algorithms
+ * - User input handling for bounds and file names
+ * - Mathematical computations with formatting
+ * 
+ * Author: Arnab Das Utsa
+ * Date: 04/30/2025
+ */
 
 public class mainSystem {
 
+	/**
+     * Scanner for user input.
+     */
 	Scanner scan = new Scanner(System.in);
 
-	// This create a file, in case needed
+	/**
+     * Creates a new file with the specified name.
+     * 
+     * @param name The name of the file to create.
+     * @return The created File object.
+     */
 	public File createFile(String name) {
 		name = fixName(name);
 		File file = new File(name);
 		return file;
 	}
 	
-	//Ask user to enter bounds
-	public Double[] getBounds() {
+	/**
+     * Prompts the user to enter the lower bound, upper bound, and increment rate.
+     * 
+     * @return An array of Double containing the bounds and increment rate.
+     */
+		public Double[] getBounds() {
 		Double[] bounds = new Double[3];
 		
 		System.out.println("Enter the lower bound of the range");
@@ -39,7 +67,12 @@ public class mainSystem {
 		return bounds;
 	}
 
-	// This create a file and write to it
+	/**
+     * Creates a BufferedWriter for writing to a file.
+     * 
+     * @param name The name of the file to write to.
+     * @return A BufferedWriter object, or null if an error occurs.
+     */
 	public BufferedWriter writeFile(String name) {
 		try {
 			File file = createFile(name);
@@ -52,7 +85,12 @@ public class mainSystem {
 		}
 	}
 
-	// This create a reader object to read the file
+	/**
+     * Creates a BufferedReader for reading from a file.
+     * 
+     * @param name The name of the file to read from.
+     * @return A BufferedReader object, or null if the file is not found.
+     */
 	public BufferedReader readFile(String name) {
 		try {
 			name = fixName(name);
@@ -64,15 +102,23 @@ public class mainSystem {
 		}
 	}
 
-	// This ask the user for the name of a file
+	/**
+     * Prompts the user to enter the name of a file.
+     * 
+     * @return The file name, formatted as a CSV file if necessary.
+     */
 	public String askName() {
 		String fileName = scan.nextLine();
 		fileName = fixName(fileName);
 		return fileName;
 	}
 
-	// This insure the user inter the correct format csv files for now since it's
-	// what we using
+	/**
+     * Ensures the file name has a ".csv" extension.
+     * 
+     * @param name The original file name.
+     * @return The formatted file name.
+     */
 	public String fixName(String name) {
 		if (!name.contains(".csv")) {
 			name += ".csv";
@@ -80,9 +126,13 @@ public class mainSystem {
 		return name;
 	}
 
-	// This generate the salting values
-	// Randomly chose 0 or 1
-	// + or - accordingly
+	 /**
+     * Generates a salted value by randomly adding or subtracting a range.
+     * 
+     * @param salt The original value.
+     * @param range The range to add or subtract.
+     * @return The salted value.
+     */
 	public double salting(double salt, double range) {
 		Random rng = new Random();
 		int num = rng.nextInt(2);
@@ -100,7 +150,12 @@ public class mainSystem {
 		return salt;
 	}
 	
-	//The smoothing method
+	/**
+     * Smooths a list of data points using a moving average algorithm.
+     * 
+     * @param sm The list of data points to smooth.
+     * @return A new list of smoothed data points.
+     */
 	public ArrayList<Double> smoothy(ArrayList<Double> sm){
 		int count = 0;
 		double avg;
@@ -130,7 +185,12 @@ public class mainSystem {
 	}
 
 
-	// This count how many lines are in the file.
+	/**
+     * Counts the number of lines in a file.
+     * 
+     * @param name The name of the file.
+     * @return The number of lines, or -1 if an error occurs.
+     */
 	public static int countLine(String name) {
 		try (BufferedReader br = new BufferedReader(new FileReader(name))) {
 			int lineCount = 0;
@@ -143,7 +203,13 @@ public class mainSystem {
 		}
 	}
 
-	// This adjust the format
+	/**
+     * Formats a double value to three decimal places.
+     * 
+     * @param in The input value.
+     * @return The formatted value.
+     */
+    
 	public double format (double in) {
 		
 		DecimalFormat df = new DecimalFormat("0.###");
@@ -153,9 +219,14 @@ public class mainSystem {
 		return Double.parseDouble(formatted);
 	}
 
-	// I tried to used recursion but then it breaks when the increment is 0.001 or
-	// smaller
-	// So I just for loop it
+	/**
+     * Calculates the area under a cosine curve for a given value.
+     * 
+     * @param cur The current value.
+     * @param upper The upper bound.
+     * @param isRad Whether the input is in radians.
+     * @return The calculated area.
+     */
 	public double getArea(double cur, double upper, boolean isRad) {
 		double rad;
 
