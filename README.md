@@ -97,8 +97,8 @@ This project explores the fusion of Java development, AI-powered data analysis, 
 
 ### 🔒 3.2 Fingerprinting via Hash Mapping
 - Text transformed into colorful digital "fingerprints".
-- Backend: Java
-- Frontend: Flask + Python (Pillow library)
+- Backend: Java + Python(Flask)
+- Frontend: HTML, CSS, JS
 - Visualizes predictable hash collisions intentionally.
 
 ---
