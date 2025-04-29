@@ -164,6 +164,6 @@ pip install Flask Pillow
 ---
 
 <div align="center">
-  <b>🏁 Thank You for Visiting NimbusPSS!</b><br><br>
+  <b>🏁 Thank You for Visiting Project-2!</b><br><br>
   <i>"Blending Traditional Logic with Modern Intelligence."</i><br><br>
 </div>
