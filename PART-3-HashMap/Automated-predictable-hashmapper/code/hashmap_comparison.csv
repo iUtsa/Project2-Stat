@@ -1,4 +1,0 @@
-DataSize,SimpleHashMapTimeMs,JavaHashMapTimeMs
-10000,1.1020,0.5855
-50000,0.9110,0.2077
-100000,0.8448,0.0622
