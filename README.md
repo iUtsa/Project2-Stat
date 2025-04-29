@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/1200x400?text=🚀+Project+NimbusPSS+🚀" alt="Project NimbusPSS Banner" style="width:100%; border-radius:15px;">
+  <img src="https://github.com/iUtsa/Web-assign5/blob/main/images/ChatGPT%20Image%20Apr%2029,%202025,%2002_42_18%20PM.png?raw=true" alt="Project NimbusPSS Banner" style="width:100%; border-radius:15px;">
   <h1>🚀 Project 2</h1>
   <p><b>Precision Salting, Smoothing, Research Analysis, and Fingerprinting</b></p>
   <p>Built with ❤️ using Java, AI, Flask, and Octave</p>
