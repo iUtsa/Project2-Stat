@@ -142,13 +142,6 @@ pip install Flask Pillow
 
 ---
 
-## 🚀 Future Enhancements
-
-- 🌐 Deploy Fingerprinting App publicly.
-- 🤖 Add real-time AI smoothing suggestions.
-- 📈 Compare classic vs AI-optimized smoothing outputs.
-- 🎨 Turn fingerprints into NFT-style digital artworks.
-- 🧠 Expand NimbusAI with broader statistical modeling.
 
 ---
 
